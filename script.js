@@ -24,7 +24,7 @@ const payload = {
     "exp": (DateTime.now.strftime('%Q').to_i + 7200) / 1000
  };
 
-
+console.log(payload);
 
 
 ///////////////////////////////////////
