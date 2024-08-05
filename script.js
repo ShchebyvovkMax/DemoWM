@@ -119,7 +119,7 @@ btnScrollTo.addEventListener('click', function (e) {
 // 1. Add event listener to common parent element
 // 2. Determine what element originated the event
 
-document.querySelector('.nav__links')[1].addEventListener('click', function (e) {
+document.querySelectorAll('.nav__links')[1].addEventListener('click', function (e) {
   e.preventDefault();
 
   // Matching strategy
