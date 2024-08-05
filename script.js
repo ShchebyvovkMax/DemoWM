@@ -10,6 +10,11 @@ const nav = document.querySelector('.nav');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
+const btnAbout = document.querySelector('.footer__link');
+const modalAbout = document.querySelectorAll('.modal')[1];
+const modalGoals = document.querySelectorAll('.modal')[2];
+const bntGoals = document.querySelector('.nav__link');
+const btnCloseGoals = document.querySelectorAll('.btn--close-modal')[2];
 
 ///////////////////////////////////////
 // Modal window
@@ -20,12 +25,16 @@ const openModal = function (e) {
   overlay.classList.remove('hidden');
 };
 
+
+
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
 
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+
+
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -35,6 +44,32 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+////////////////////////////////////////
+//about modal
+const openAbout = function(e){
+  e.preventDefault();
+  modalAbout.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+const closeAbout = function () {
+  modalAbout.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+btnAbout.addEventListener('click', openAbout)
+const btnClosAbout = document.querySelectorAll('.btn--close-modal')[1];
+btnClosAbout.addEventListener('click', closeAbout);
+//////////////////////////////////
+//goals
+bntGoals.addEventListener('click', function(e){
+  e.preventDefault();
+  modalGoals.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+btnCloseGoals.addEventListener('click', function(){
+  modalGoals.classList.add('hidden');
+  overlay.classList.add('hidden');
+})
 
 ///////////////////////////////////////
 // Button scrolling
