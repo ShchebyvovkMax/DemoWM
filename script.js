@@ -15,13 +15,14 @@ const modalAbout = document.querySelectorAll('.modal')[1];
 const modalGoals = document.querySelectorAll('.modal')[2];
 const bntGoals = document.querySelector('.nav__link');
 const btnCloseGoals = document.querySelectorAll('.btn--close-modal')[2];
+const DateTime = new Date();
 const payload = { 
     "sub" : "36-Character-Hyphenated-Contact-GUID",
     "given_name" : "Tony",
     "family_name" : "Stark",
     "iss" : "EUREGION015",
-    "iat" : DateTime.now.strftime('%Q').to_i / 1000,
-    "exp": (DateTime.now.strftime('%Q').to_i + 7200) / 1000
+    "iat" : DateTime.strftime('%Q').to_i / 1000,
+    "exp": (DateTime.strftime('%Q').to_i + 7200) / 1000
  };
 
 console.log(payload);
